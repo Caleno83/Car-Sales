@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import Header from './components/Header';
-import AddedFeatures from './components/AddedFeatures';
-import AdditionalFeatures from './components/AdditionalFeatures';
-import Total from './components/Total';
-import { connect } from 'react-redux';
+import Header from "./components/Header";
+import AddedFeatures from "./components/AddedFeatures";
+import AdditionalFeatures from "./components/AdditionalFeatures";
+import Total from "./components/Total";
+import { connect } from "react-redux";
 
 const App = (props) => {
-
   // const state = {
   //   additionalPrice: 0,
   //   car: {
@@ -40,12 +39,13 @@ const App = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log("Application state tree from Redux", state);
+  console.log("This is the mapStateToProps for App", state);
+
   return {
+    additionalPrice: state.additionalPrice,
     car: state.car,
     additionalFeatures: state.additionalFeatures,
-    additionalPrice: state.additionalPrice
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, {}) (App);
+export default connect(mapStateToProps, {})(App);
