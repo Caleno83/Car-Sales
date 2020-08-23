@@ -1,6 +1,4 @@
 import React from "react";
-import { addFeatures } from "../actions/actions";
-import { connect } from "react-redux";
 
 const AdditionalFeature = (props) => {
   return (
@@ -17,6 +15,4 @@ const AdditionalFeature = (props) => {
   );
 };
 
-const mapDispatchToProps = { addFeatures: addFeatures };
-
-export default connect(null, mapDispatchToProps)(AdditionalFeature);
+export default AdditionalFeature;
