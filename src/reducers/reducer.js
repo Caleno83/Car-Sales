@@ -28,6 +28,11 @@ export const reducer = (state = initialState, action) => {
           ...state.car,
           features: [...state.car.features, action.payload],
         },
+        additionalFeatures: [
+          ...state.additionalFeatures.filter(
+            (feature) => feature.id !== action.payload.id
+          ),
+        ],
       };
 
     case REMOVE_FEATURES:
@@ -38,9 +43,10 @@ export const reducer = (state = initialState, action) => {
           ...state.car,
           features: [
             ...state.car.features.filter(
-              (feature) => action.payload.id !== feature.id
+              (feature) => feature.id !== action.payload.id
             ),
           ],
+          additionalFeatures: [...state.additionalFeatures, action.payload],
         },
       };
     default:
